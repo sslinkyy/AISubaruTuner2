@@ -8,3 +8,6 @@ def test_apply_changes_importable(tmp_path):
     rom = tmp_path / "dummy.bin"
     out = tmp_path / "out.bin"
     rom.write_bytes(b" " * 1024)
+    apply_changes(str(rom), [], str(out))
+    # If no exception, consider pass
+    assert True
